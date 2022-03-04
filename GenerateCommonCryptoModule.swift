@@ -86,7 +86,9 @@ if verbose {
 let moduleDirectory: String
 let moduleFileName: String
 if CommandLine.arguments.count > 2 {
-    moduleDirectory =  "\(CommandLine.arguments[2])/Frameworks/\(sdk)/CommonCrypto.framework"
+//    let rootDirectory = CommandLine.arguments[2]
+    let rootDirectory = "/Volumes/Macintosh HD/Projects/Development/Apple Platforms/guardian/macos/safari_extensions/NEKit"
+    moduleDirectory =  "\(rootDirectory)/Frameworks/\(sdk)/CommonCrypto.framework"
     moduleFileName = "module.map"
 } else {
     moduleDirectory = "\(sdkPath)/System/Library/Frameworks/CommonCrypto.framework"
