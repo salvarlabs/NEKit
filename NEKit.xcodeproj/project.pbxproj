@@ -1319,7 +1319,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "SWIFT_SDK=`xcrun --show-sdk-path -sdk macosx`\necho SWIFT_SDK is $SWIFT_SDK\nxcrun -sdk macosx swift  ./GenerateCommonCryptoModule.swift $PLATFORM_NAME $PROJECT_DIR\n";
+			shellScript = "SWIFT_SDK=`xcrun --show-sdk-path -sdk macosx`\necho SWIFT_SDK is $SWIFT_SDK\nxcrun -sdk macosx swift  ./GenerateCommonCryptoModule.swift $PLATFORM_NAME \"$PROJECT_DIR\"\n";
 		};
 		36B05A1B1DE4503800074910 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
