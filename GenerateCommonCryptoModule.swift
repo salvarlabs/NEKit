@@ -78,16 +78,22 @@ guard let sdkPath = trim(runShellCommand(command: "/usr/bin/xcrun --sdk \(sdk) -
 }
 
 if verbose {
+    print("=======Verbose======")
     print("SDK: \(sdk)")
     print("SDK Version: \(sdkVersion)")
     print("SDK Path: \(sdkPath)")
+    
+    if CommandLine.arguments.count > 1 {
+        let rootDirectory = CommandLine.arguments[2]
+        print("PROJECT DIR: \(rootDirectory)")
+    }
 }
 
 let moduleDirectory: String
 let moduleFileName: String
 if CommandLine.arguments.count > 2 {
-//    let rootDirectory = CommandLine.arguments[2]
-    let rootDirectory = "/Volumes/Macintosh HD/Projects/Development/Apple Platforms/guardian/macos/safari_extensions/NEKit"
+    let rootDirectory = CommandLine.arguments[2]
+//    let rootDirectory = "/Volumes/Macintosh HD/Projects/Development/Apple Platforms/guardian/macos/safari_extensions/NEKit"
     moduleDirectory =  "\(rootDirectory)/Frameworks/\(sdk)/CommonCrypto.framework"
     moduleFileName = "module.map"
 } else {
